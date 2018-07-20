@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Blog Update Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="/main.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div>
+      <a class="" href="/profile"> < Back </a>
+    </div>
+    <div>
+      
+    </div>
+  </nav>
+
+  <div class="container">
+    <% if (message.length) { %>
+      <div class="alert">
+        <%= message %>
+      </div>
+    <% } %>
+
+    <form action="/update-profile" method="POST">
+      <label for="name">Name</label>
+      <div class="input-container">
+        <input 
+          type="text" 
+          name="name" 
+          class="form-input" 
+          value="<%= user.name %>" 
+          required
+        />
+      </div>
+    
+      <label for="birthday">Birthday</label>
+      <div class="input-container">
+        <input 
+          type="date" 
+          name="birthday" 
+          class="form-input" 
+          value="<%= user.birthday %>"
+          required
+        />
+      </div>
+    
+      <label for="email">Email</label>
+      <div class="input-container">
+        <input 
+          type="email" 
+          name="email" 
+          class="form-input" 
+          value="<%= user.email %>"
+          required
+        />
+      </div>
+    
+      <label for="password">Current Password</label>
+      <div class="input-container">
+        <input 
+          type="password" 
+          name="password" 
+          class="form-input" 
+          required
+        />
+      </div>
+
+      <label for="password">New Password</label>
+      <div class="input-container">
+        <input 
+          type="password" 
+          name="new_password" 
+          class="form-input" 
+          required
+        />
+      </div>
+    
+      <label for="password_confirmation">New Password Confirmation</label>
+      <div class="input-container">
+        <input 
+          type="password" 
+          name="new_password_confirmation" 
+          class="form-input" 
+          required
+        />
+      </div>
+    
+      <button type="submit" class="form-btn">Update</button>
+    </form>
+    
+  <script src="/main.js"></script>
+</body>
+</html>
